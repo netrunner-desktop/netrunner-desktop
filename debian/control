@@ -219,6 +219,7 @@ Recommends: alsa-utils,
             xdg-user-dirs,
             xdgurl,
             xterm,
+            xul-ext-lightning,
             yakuake
 Depends: console-data,
          console-setup,
