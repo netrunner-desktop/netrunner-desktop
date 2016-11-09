@@ -31,6 +31,7 @@ Recommends: alsa-utils,
             dolphin,
             expanding-icons-taskmanager,
             ffmpegthumbnailer,
+            ffmpegthumbs,
             firefox-locale-en,
             firefox-plasma,
             firmware-linux-nonfree,
@@ -92,7 +93,6 @@ Recommends: alsa-utils,
             kdepim-runtime,
             kdesudo,
             kdiamond,
-            kffmpegthumbnailer,
             khelpcenter,
             khotkeys,
             kinfocenter,
@@ -231,5 +231,7 @@ Depends: console-data,
          xorg,
          xserver-xorg,
          xserver-xorg-video-all
+Breaks: kffmpegthumbnailer (<< 2.1.0+p8+git20161003.1141)
+Replaces: kffmpegthumbnailer (<< 2.1.0+p8+git20161003.1141)
 Description: Meta package for the Netrunner desktop environment
    Meta package for the Netrunner desktop environment
