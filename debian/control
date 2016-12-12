@@ -230,6 +230,10 @@ Depends: console-data,
          simplemenu,
          xorg,
          xserver-xorg,
+         xserver-xorg-input-evdev,
+         xserver-xorg-input-joystick,
+         xserver-xorg-input-kbd,
+         xserver-xorg-input-mouse,
          xserver-xorg-video-all
 Breaks: kffmpegthumbnailer (<< 2.1.0+p8+git20161003.1141)
 Replaces: kffmpegthumbnailer (<< 2.1.0+p8+git20161003.1141)
