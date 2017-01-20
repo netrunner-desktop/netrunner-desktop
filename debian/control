@@ -8,6 +8,7 @@ Standards-Version: 3.7.2
 Package: netrunner-desktop
 Architecture: all
 Recommends: alsa-utils,
+            android-sdk-platform-tools-common,
             android-tools-adb,
             android-tools-fastboot,
             apt-transport-https,
