@@ -233,6 +233,7 @@ Recommends: alsa-utils,
             xterm,
             xul-ext-lightning,
             yakuake,
+            yarock,
             zenity
 Depends: console-data,
          console-setup,
