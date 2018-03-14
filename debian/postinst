@@ -1,0 +1,37 @@
+#!/bin/bash
+
+function create_sourceslist_backup {
+  # Create Backup in case anything goes wrong
+  find /etc/apt/sources.list.d/ -exec cp {}{,.bak} \;
+  cp /etc/apt/sources.list{,.bak}
+}
+
+
+function change_repo_component {
+  OLD=$1
+  NEW=$2
+  REPOLIST=$3
+  if [ -n $OLD ] && [ -n $REPOLIST ]; then
+    sed -i -e "s#$OLD#$NEW#" $REPOLIST
+  fi
+}
+
+function remove_repo_component {
+  COMP=$1
+  REPOLIST=$2
+  change_repo_component "$COMP" "" "$REPOLIST" 
+}
+
+function prepare_repos {
+  # Change main repo
+  change_repo_component "dci.ds9.pub/netrunner" "deb.netrunner.com/dci/packages/netrunner" "/etc/apt/sources.list.d/netrunner.list"
+  change_repo_component "dci.ds9.pub/netrunner" "deb.netrunner.com/dci/packages/netrunner" "/etc/apt/sources.list.d/netrunner-backports.list"
+
+  # Remove unused components
+  remove_repo_component "qt5" /etc/apt/sources.list.d/netrunner.list
+}
+
+if [ install = "$1" -o upgrade = "$1" -o configure = "$1" ]; then
+  create_sourceslist_backup
+  prepare_repos
+fi
